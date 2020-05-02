@@ -9,6 +9,77 @@
     <link rel="stylesheet" href="https://use.typekit.net/bpu8cyi.css">
 </head>
 <body>
+    <div class="header">
+        <nav role="navigation">
+            <div id="menuToggle">
+              <!--
+              A fake / hidden checkbox is used as click reciever,
+              so you can use the :checked selector on it.
+              -->
+              <input type="checkbox" />
+              
+              <!--
+              Some spans to act as a hamburger.
+              
+              They are acting like a real hamburger,
+              not that McDonalds stuff.
+              -->
+              <span></span>
+              <span></span>
+              <span></span>
+              
+              <!--
+              Too bad the menu has to be inside of the button
+              but hey, it's pure CSS magic.
+              -->
+              <ul id="menu">
+                <a href="#"><li>Breakfast</li></a>
+                <a href="#"><li>Lunch</li></a>
+                <a href="#"><li>Dinner</li></a>
+                <a href="#"><li>Help</li></a>
+              </ul>
+            </div>
+          </nav>
+          <h1>Recipes4U</h1>
+    </div>
     
+    <div class="hero">
+        <img id="hero" src="../assets/images/Recipe_Broccoli_Mozzarella_Calzones_with_Caesar_Salad/0101_FPV_Broccoli-Calzones_97286_WEB_SQ_hi_res.jpg" alt="Recipe_Broccoli_Mozzarella_Calzones_with_Caesar_Salad">
+        <div class="search">
+            <label for="gsearch">Search:</label>
+            <input type="search" id="gsearch" name="gsearch">
+        </div>
+    </div>
+    <div class="featured">
+        <div class="container">
+            <div class="food">
+                <img class="food" src="../assets/images/Recipe_Ancho-Orange_Chicken_with_Kale_Rice_Roasted_Carrots/0101_FPP_Chicken-Rice_18630_WEB_high_feature.jpg" alt="Recipe_Ancho-Orange_Chicken_with_Kale_Rice_Roasted_Carrots">
+            </div>
+            <p>
+                <b>Ancho Orange chicken</b><br>
+                with Kale, Rice, and Roasted Carrots
+            </p>
+        </div>
+
+        <div class="container">
+            <div class="food">
+                <img class="food" src="../assets/images/Recipe_Ancho-Orange_Chicken_with_Kale_Rice_Roasted_Carrots/0101_FPP_Chicken-Rice_18630_WEB_high_feature.jpg" alt="Recipe_Ancho-Orange_Chicken_with_Kale_Rice_Roasted_Carrots">
+            </div>
+            <p>
+                <b>Ancho Orange chicken</b><br>
+                with Kale, Rice, and Roasted Carrots
+            </p>
+        </div>
+
+        <div class="container">
+            <div class="food">
+                <img class="food" src="../assets/images/Recipe_Ancho-Orange_Chicken_with_Kale_Rice_Roasted_Carrots/0101_FPP_Chicken-Rice_18630_WEB_high_feature.jpg" alt="Recipe_Ancho-Orange_Chicken_with_Kale_Rice_Roasted_Carrots">
+            </div>
+            <p>
+                <b>Ancho Orange chicken</b><br>
+                with Kale, Rice, and Roasted Carrots
+            </p>
+        </div>
+    </div>
 </body>
 </html>
