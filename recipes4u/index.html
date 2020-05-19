@@ -10,37 +10,15 @@
 </head>
 <body>
     <div class="header">
-        <nav role="navigation">
-            <div id="menuToggle">
-              <!--
-              A fake / hidden checkbox is used as click reciever,
-              so you can use the :checked selector on it.
-              -->
-              <input type="checkbox" />
-              
-              <!--
-              Some spans to act as a hamburger.
-              
-              They are acting like a real hamburger,
-              not that McDonalds stuff.
-              -->
-              <span></span>
-              <span></span>
-              <span></span>
-              
-              <!--
-              Too bad the menu has to be inside of the button
-              but hey, it's pure CSS magic.
-              -->
-              <ul id="menu">
-                <a href="#"><li>Breakfast</li></a>
-                <a href="#"><li>Lunch</li></a>
-                <a href="#"><li>Dinner</li></a>
-                <a href="#"><li>Help</li></a>
-              </ul>
+            <div id="navigation_container">
+                <ul id="navigation">
+                    <li class="one"><a href="/work">BEEF</a></li>
+                    <li class="two"><a href="/blog">CHICKEN</a></li>
+                    <li class="three"><a href="/about">PORK</a></li>
+                    <li class="four"><a href="/about">VEGETARIAN</a></li>
+                </ul>
             </div>
-          </nav>
-          <h1><a href="index.html">Recipes4U</a></h1>
+        <h1><a href="index.html">Recipes4U</a></h1>
     </div>
     
     <div class="hero">
@@ -50,6 +28,23 @@
             <input type="search" id="gsearch" name="gsearch">
         </div>
     </div>
+
+    <div class="box">
+        <a class="button" href="#popup1"><b>HELP</b></a>
+    </div>
+    
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>HELP</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                Try to click on a featured recipe! <br>
+                OR <br>
+                Search or Filter through recipes using the menus above!
+            </div>
+        </div>
+    </div>
+
     <div class="featured">
         <div class="container">
             <div class="food">

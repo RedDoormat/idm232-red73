@@ -8,6 +8,8 @@ html { /*More font stuff*/
     font-family: brandon-grotesque, sans-serif;
     font-weight: 400;
     font-style: normal;
+    background: rgb(108,116,124);
+    background: radial-gradient(circle, rgba(108,116,124,1) 0%, rgba(0,0,0,1) 100%);
     max-width: 100vw;
 }
 
@@ -21,153 +23,137 @@ body
   font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
-#menuToggle
-{
-    display: block;
-    position: relative;
-    top: 50px;
-    left: 50px;
-    
-    z-index: 1;
-    
-    -webkit-user-select: none;
-    user-select: none;
+ul {padding:0;}
+
+#navigation_container #navigation {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 40vw;
 }
 
-#menuToggle a
-{
-  text-decoration: none;
-  color: #232323;
-  
-  transition: color 0.3s ease;
+#navigation_container #navigation li {
+    margin: 1rem;
+    list-style: none;
+    float: left;
+    width: 20vw;
+    height: 25px;
+    vertical-align: top;
 }
 
-#menuToggle a:hover
-{
-  color: white;
+#navigation_container #navigation li.one {
+    border-bottom: 2px solid #00ff6a;
 }
 
-#menuToggle span:first-child
-{
-    transform-origin: 0% 0%;
+#navigation_container #navigation li.two {
+    border-bottom: 2px solid #2c6939;
 }
 
-#menuToggle span:nth-last-child(2)
-{
-    transform-origin: 0% 100%;
+#navigation_container #navigation li.three{
+    border-bottom: 2px solid #009619
 }
 
-/* 
-    * Transform all the slices of hamburger
-    * into a crossmark.
-    */
-#menuToggle input:checked ~ span
-{
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: #232323;
+#navigation_container #navigation li.four{
+    border-bottom: 2px solid #44c440
 }
 
-/*
-    * But let's hide the middle one.
-    */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+
+#navigation_container #navigation li a:hover{
+    text-decoration:none;color:#aaa
+}
+
+.box {
+    margin: 0;
+}
+
+.button:hover {
+    background: #06D85F;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
     opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
 }
 
-/*
-    * Ohyeah and the last one should go the other direction
-    */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-    transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
-    * Make this absolute positioned
-    * at the top left of the screen
-    */
-
-#menuToggle input
-{
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: -7px;
-    left: -5px;
-    
-    cursor: pointer;
-    
-    opacity: 0; /* hide this */
-    z-index: 2; /* and place it over the hamburger */
-    
-    -webkit-touch-callout: none;
-}
-
-/*
-    * Just a quick hamburger
-    */
-#menuToggle span
-{
-    display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
     position: relative;
-    
-    background: #333333;
-    border-radius: 3px;
-    
-    z-index: 1;
-    
-    transform-origin: 4px 0px;
-    
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
+    transition: all 5s ease-in-out;
 }
 
-#menu
-{
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
     position: absolute;
-    width: 300px;
-    margin: -100px 0 0 -50px;
-    padding: 50px;
-    padding-top: 125px;
-    
-    background: #ededed;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */
-    
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
-    
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
 }
-
-#menu li
-{
-    padding: 10px 0;
-    font-size: 22px;
+.popup .close:hover {
+    color: #06D85F;
 }
-
-/*
-    * And let's slide it in from the left
-    */
-#menuToggle input:checked ~ ul
-{
-    transform: none;
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
 }
 
 /*Computer Layout*/
 @media screen and (min-width: 1050px) {
 
+    .button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: green;
+        font-size: 1em;
+        padding: 10px;
+        color: #fff;
+        border-radius: 20px/50px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+    }
+
+    #navigation_container #navigation li a,  #navigation_container #navigation li a:visited {
+        font-family: "Helvetica",Arial,sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: 1.2rem;
+        text-decoration:none;
+        letter-spacing: .4pt;
+    }
+
     h1 {
         text-align: center;
+    }
+
+    a {
+        color: white;
+    }
+
+    a:hover {
+        color: rgb(47, 255, 134);
     }
 
     .hero {
@@ -176,12 +162,14 @@ body
         position: relative;
         text-align: center;
         color: white;
+        max-width: 100vw;
     }
 
     #hero{
         width: 100vw;
         height: 35vh;
         object-fit: cover;
+        max-width: 100vw;
     }
 
     .search {
@@ -196,7 +184,7 @@ body
         margin: 2rem;
         width: 29vw;
         height: 26vw;
-        background-color: grey;
+        background-image: linear-gradient( 135deg, rgb(38, 82, 38) 10%, rgb(49, 150, 21) 100%);
         border-radius: 2rem;
         text-align: center;
         font-size: 1.3vw;
@@ -229,8 +217,38 @@ body
 /*Tablet Layout*/
 @media screen and (max-width: 1049px) {
 
+    .button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: green;
+        font-size: 1em;
+        padding: 10px;
+        color: #fff;
+        border-radius: 20px/50px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+    }
+
+    #navigation_container #navigation li a,  #navigation_container #navigation li a:visited {
+        font-family: "Helvetica",Arial,sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: 1.2rem;
+        text-decoration:none;
+        letter-spacing: .4pt;
+    }
+
     h1 {
         text-align: center;
+    }
+
+    a {
+        color: white;
+    }
+
+    a:hover {
+        color: rgb(47, 255, 134);
     }
 
     .hero {
@@ -258,7 +276,7 @@ body
         margin: 1rem 1vw;
         width: 45vw;
         height: 40vw;
-        background-color: grey;
+        background-image: linear-gradient( 135deg, rgb(38, 82, 38) 10%, rgb(49, 150, 21) 100%);
         border-radius: 2rem;
         text-align: center;
         font-size: 1.7vw;
@@ -293,8 +311,38 @@ body
 /*MOBILE MODE*/
 @media screen and (max-width: 640px) {
 
+    .button {
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+        background-color: green;
+        font-size: 1em;
+        padding: 10px;
+        color: #fff;
+        border-radius: 20px/50px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+    }
+
+    .box{
+        width: 70%;
+    }
+    
+    .popup{
+        width: 70%;
+    }
+
     h1 {
         text-align: center;
+    }
+
+    a {
+        color: white;
+    }
+
+    a:hover {
+        color: rgb(47, 255, 134);
     }
 
     .hero {
@@ -322,7 +370,7 @@ body
         margin: 1rem 9vw;
         width: 80vw;
         height: 70vw;
-        background-color: grey;
+        background-image: linear-gradient( 135deg, rgb(38, 82, 38) 10%, rgb(49, 150, 21) 100%);
         border-radius: 2rem;
         text-align: center;
         font-size: 3vw;
