@@ -1,0 +1,343 @@
+/*Style Sheet for Recipe Page*/
+
+html { /*More font stuff*/
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: rgb(108,116,124);
+    background: radial-gradient(circle, rgba(108,116,124,1) 0%, rgba(0,0,0,1) 100%);
+    max-width: 100vw;
+}
+
+body
+{
+  margin: 0;
+  padding: 0;
+  
+  /* make it look decent enough */
+  color: #383838;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+label {
+    color: white;
+}
+
+ul {padding:0;}
+
+#navigation_container #navigation {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 40vw;
+}
+
+#navigation_container #navigation li {
+  margin: 1rem;
+  list-style: none;
+  float: left;
+  width: 20vw;
+  height: 25px;
+  vertical-align: top;
+}
+
+#navigation_container #navigation li.one {
+    border-bottom: 2px solid #00ff6a;
+}
+
+#navigation_container #navigation li.two {
+    border-bottom: 2px solid #2c6939;
+}
+
+#navigation_container #navigation li.three{
+    border-bottom: 2px solid #009619
+}
+
+#navigation_container #navigation li.four{
+    border-bottom: 2px solid #44c440
+}
+
+
+#navigation_container #navigation li a:hover{
+  text-decoration:none;color:#aaa
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: rgb(47, 255, 134);
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cooking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    margin: 0;
+}
+
+.button:hover {
+    background: #06D85F;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.popup .close:hover {
+    color: #06D85F;
+}
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+/*Computer Layout*/
+@media screen and (min-width: 1050px) {
+
+    .button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: green;
+        font-size: 1em;
+        padding: 10px;
+        color: #fff;
+        border-radius: 20px/50px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+    }
+    
+    #navigation_container #navigation li a,  #navigation_container #navigation li a:visited {
+        font-family: "Helvetica",Arial,sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: 1.2rem;
+        text-decoration:none;
+        letter-spacing: .4pt;
+    }
+      
+
+    .step_image{
+        width: 50vw;
+        height: 40vw;
+    }
+
+    #hero{
+        width: 50vw;
+        height: 40vh;
+        object-fit: cover;
+    }
+    
+    .description {
+        width: 40vw;
+    }
+
+    .ingredients {
+        width: 40vw;
+    }
+
+    .cooking {
+        width: 40vw;
+    }
+
+    .step_img {
+        width: 40vw;
+    }
+
+    img {
+        width: 40vw;
+        object-fit: fill, scale-down;
+    }
+
+    .search {
+        position: absolute;
+        top: 7%;
+        left: 10rem;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*Tablet Layout*/
+@media screen and (max-width: 1049px) {
+
+    .button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: green;
+        font-size: 1em;
+        padding: 10px;
+        color: #fff;
+        border-radius: 20px/50px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+    }
+
+    #navigation_container #navigation li a,  #navigation_container #navigation li a:visited {
+        font-family: "Helvetica",Arial,sans-serif;
+        color: rgb(255, 255, 255);
+        font-size: 1.2rem;
+        text-decoration:none;
+        letter-spacing: .4pt;
+    }
+
+    .step_image{
+        width: 60vw;
+        height: 40vw;
+    }
+
+    #hero{
+        width: 60vw;
+        height: 40vh;
+        object-fit: cover;
+    }
+    
+    .description {
+        width: 60vw;
+    }
+
+    .ingredients {
+        width: 60vw;
+    }
+
+    .cooking {
+        width: 60vw;
+    }
+
+    .step_img {
+        width: 60vw;
+    }
+
+    img {
+        width: 60vw;
+        object-fit: scale-down;
+    }
+
+    .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+    }
+}
+
+/*MOBILE MODE*/
+@media screen and (max-width: 640px) {
+
+    .button {
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+        background-color: green;
+        font-size: 1em;
+        padding: 10px;
+        color: #fff;
+        border-radius: 20px/50px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+    }
+
+    .box{
+        width: 70%;
+    }
+    
+    .popup{
+        width: 70%;
+    }
+
+    .step_image{
+        width: 80vw;
+        height: 40vw;
+    }
+
+    #hero{
+        width: 80vw;
+        height: 40vh;
+        object-fit: cover;
+    }
+    
+    .description {
+        width: 80vw;
+    }
+
+    .ingredients {
+        width: 80vw;
+    }
+
+    .cooking {
+        width: 80vw;
+    }
+
+    .step_img {
+        width: 80vw;
+    }
+
+    img {
+        width: 80vw;
+        object-fit: scale-down;
+    }
+}
