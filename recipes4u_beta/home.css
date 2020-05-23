@@ -10,7 +10,6 @@ html { /*More font stuff*/
     font-style: normal;
     background: rgb(108,116,124);
     background: radial-gradient(circle, rgba(108,116,124,1) 0%, rgba(0,0,0,1) 100%);
-    max-width: 100vw;
 }
 
 body
@@ -119,9 +118,13 @@ ul {padding:0;}
     overflow: auto;
 }
 
+.food:hover{
+    opacity: 80%;
+}
+
 /*Computer Layout*/
 @media screen and (min-width: 1050px) {
-
+   
     .button {
         position: absolute;
         top: 1rem;
@@ -166,7 +169,7 @@ ul {padding:0;}
     }
 
     #hero{
-        width: 100vw;
+        width: 99vw;
         height: 35vh;
         object-fit: cover;
         max-width: 100vw;
@@ -181,16 +184,18 @@ ul {padding:0;}
 
     .container {
         display: flex;
-        margin: 2rem;
-        width: 29vw;
-        height: 26vw;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-flow: column wrap;
+        margin: 2vw;
+        width: 28vw;
+        height: 28vw;
         background-image: linear-gradient( 135deg, rgb(38, 82, 38) 10%, rgb(49, 150, 21) 100%);
         border-radius: 2rem;
         text-align: center;
         font-size: 1.3vw;
         color: white;
         align-items: center;
-        flex-direction: column;
     }
 
     .food {
@@ -210,6 +215,18 @@ ul {padding:0;}
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+    }
+
+    .tle {
+        font-size: 1.7vw;
+        margin: .5rem 0;
+    }
+
+    .subtitle{
+        font-size: 1.2vw;
     }
 }
 /*END Computer Layout*/
@@ -273,9 +290,13 @@ ul {padding:0;}
     }
 
     .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-flow: column wrap;
         margin: 1rem 1vw;
-        width: 45vw;
-        height: 40vw;
+        width: 43vw;
+        height: 43vw;
         background-image: linear-gradient( 135deg, rgb(38, 82, 38) 10%, rgb(49, 150, 21) 100%);
         border-radius: 2rem;
         text-align: center;
@@ -285,14 +306,14 @@ ul {padding:0;}
     }
 
     .food {
-        width: 40vw;
+        width: 42vw;
         height: 30vw;
         margin: .5rem auto;
     }
 
     img.food {
         border-radius: 1rem;
-        width: 35vw;
+        width: 40vw;
         height: 30vw;
         object-fit: cover;
     }
@@ -304,6 +325,15 @@ ul {padding:0;}
         flex-direction: row;
         flex-wrap: wrap;
         flex-flow: row wrap;
+    }
+
+    .tle {
+        font-size: 2.3vw;
+        margin: 1rem auto .2rem;
+    }
+
+    .subtitle{
+        font-size: 1.9vw;
     }
 }
 /*END TABLET LAYOUT*/
@@ -367,6 +397,10 @@ ul {padding:0;}
     }
 
     .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-flow: column wrap;
         margin: 1rem 9vw;
         width: 80vw;
         height: 70vw;
@@ -397,6 +431,20 @@ ul {padding:0;}
         flex-direction: row;
         flex-wrap: wrap;
         flex-flow: row wrap;
+    }
+
+    .tle {
+        display: flex;
+        font-size: 4.2vw;
+        margin: .5rem auto;
+    }
+
+    .subtitle{
+        font-size: 3.5vw;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        justify-content: center;
     }
 }
 /*END MOBILE MODE*/
