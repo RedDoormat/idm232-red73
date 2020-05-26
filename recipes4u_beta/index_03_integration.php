@@ -30,10 +30,10 @@
     <div class="header">
             <div id="navigation_container">
                 <ul id="navigation">
-                    <li class="one"><a href="/work">BEEF</a></li>
-                    <li class="two"><a href="/blog">CHICKEN</a></li>
-                    <li class="three"><a href="/about">PORK</a></li>
-                    <li class="four"><a href="/about">VEGETARIAN</a></li>
+                    <li class="one"><a href="">BEEF</a></li>
+                    <li class="two"><a href="">CHICKEN</a></li>
+                    <li class="three"><a href="">PORK</a></li>
+                    <li class="four"><a href="">VEGETARIAN</a></li>
                 </ul>
             </div>
         <h1><a href="index_03_integration.php">Recipes4U</a></h1>
@@ -75,12 +75,12 @@
             </div>
             <div class="tle">
                     <b>
-                        <?php echo $row['tle']; ?>
+                        <?php echo $row['tle']; ?> <br>
                     </b> 
-            </div>
-            <div class="subtitle">
                     <?php echo $row['subtitle']; ?>
             </div>
+                   
+          
         </div>        
 
         <?php
