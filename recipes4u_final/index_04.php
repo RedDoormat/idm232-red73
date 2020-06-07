@@ -2,14 +2,36 @@
     // Step 1 Open a connection to DB
     require 'include/db.php';
 
-    // Step 2 perform a datbase table query
-    $table = 'recipes';
-    $query = "select * FROM {$table}";
-    $result = mysqli_query($connection, $query);
+    // Get filter info if passed in URL
+    $filter = $_GET['filter'];
+    //print_r($filter);
 
-    //Check for errors in SQL statement
-    if (!$result) {
-        die ('Databse query failed');
+    $table = 'recipes';
+
+    if (isset($_POST['submit'])) {
+        //echo "User Clicked on Submit";
+        $search = $_POST['search'];
+        $query = "select * FROM {$table} WHERE tle LIKE '%{$search}%'";
+        $result = mysqli_query($connection, $query);
+        //print_r($result);
+        if (!$result) {
+            die ('Search query failed');
+        }
+    } else if (isset($filter)) {  
+        $query = "select * FROM {$table} WHERE proteine LIKE '%{$filter}%'";
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die ('Filter query failed');
+        }
+    } else {
+        // Step 2 perform a datbase table query
+        $query = "select * FROM {$table}";
+        $result = mysqli_query($connection, $query);
+
+        //Check for errors in SQL statement
+        if (!$result) {
+            die ('Databse query failed');
+        }
     }
 
 ?>
@@ -30,20 +52,23 @@
     <div class="header">
             <div id="navigation_container">
                 <ul id="navigation">
-                    <li class="one"><a href="">BEEF</a></li>
-                    <li class="two"><a href="">CHICKEN</a></li>
-                    <li class="three"><a href="">PORK</a></li>
-                    <li class="four"><a href="">VEGETARIAN</a></li>
+                    <li class="one"><a href="index_04.php?filter=Beef">BEEF</a></li>
+                    <li class="two"><a href="index_04.php?filter=Chicken">CHICKEN</a></li>
+                    <li class="three"><a href="index_04.php?filter=Pork">PORK</a></li>
+                    <li class="four"><a href="index_04.php?filter=Vegetarian">VEGETARIAN</a></li>
                 </ul>
             </div>
         <h1><a href="index_04.php">Recipes4U</a></h1>
     </div>
     
     <div class="hero">
-        <img id="hero" src="../assets/images/0101_FPV_Broccoli-Calzones_97286_WEB_SQ_hi_res.jpg" alt="Recipe_Broccoli_Mozzarella_Calzones_with_Caesar_Salad">
+        <!-- <img id="hero" src="../assets/images/0101_FPV_Broccoli-Calzones_97286_WEB_SQ_hi_res.jpg" alt="Recipe_Broccoli_Mozzarella_Calzones_with_Caesar_Salad"> -->
         <div class="search">
-            <label for="gsearch">Search:</label>
-            <input type="search" id="gsearch" name="gsearch">
+            <form action="index_04.php" method="POST">
+                <label for="search">Search:</label>
+                <input type="search" id="search" name="search">
+                <button type="submit" name="submit" value="submit">Submit</button>
+            </form>
         </div>
     </div>
 
@@ -61,6 +86,23 @@
                 Search or Filter through recipes using the menus above!
             </div>
         </div>
+    </div>
+
+    <div class="title">
+        <?php
+            if (isset($_POST['submit'])) {
+                if ($result->num_rows == 0) {
+                    echo "<p>No Recipes Found</p>";
+                } else {
+                    echo "<p>Found Recipes</p>";
+                }
+            } else if (isset($filter)) {
+                echo "<p>Filtered Recipes</p>"; 
+            } else {
+                echo "<p>All Recipes</p>";
+            }
+        ?>
+        
     </div>
 
     <div class="featured">

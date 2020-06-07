@@ -26,8 +26,11 @@
           <h1><a href="index_04.php">Recipes4U</a></h1>
     </div>
     <div class="search">
-        <label for="gsearch">Search:</label>
-        <input type="search" id="gsearch" name="gsearch">
+            <form action="index_04.php" method="POST">
+                <label for="search">Search:</label>
+                <input type="search" id="search" name="search">
+                <button type="submit" name="submit" value="submit">Submit</button>
+            </form>
     </div>
 
     <div class="box">
